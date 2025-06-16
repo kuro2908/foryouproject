@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Web đọc truyện Ink</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+  </style>
+</head>
+
+<body>
+  <!-- NHẠC nền -->
+<audio id="background-music" src="music.mp3" loop preload="auto"></audio>
+
+  <label class="container">
+  <div class="simple-text" style="color: black;">Bật/Tắt nhạc</div>
+  <input id="music-toggle" type="checkbox" checked />
+  <div class="checkmark"></div>
+  <div class="torch">
+    <div class="head">
+      <div class="face top">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="face left">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="face right">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="stick">
+      <div class="side side-left">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="side side-right">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</label>
+  
+  <h1>Truyện Tương Tác</h1>
+  <div id="story"></div>
+  <button id="back-to-top" title="Quay lên đầu">⬆</button>
+  
+  <script src="https://cdn.jsdelivr.net/npm/inkjs/dist/ink.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
