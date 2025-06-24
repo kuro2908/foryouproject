@@ -2,7 +2,7 @@ let story;
 let storyDiv;
 
 async function loadStory() {
-  const response = await fetch("./data/story.json");
+  const response = await fetch("data/story.json");
   const storyContent = await response.json();
   story = new inkjs.Story(storyContent);
   storyDiv = document.getElementById("story");
