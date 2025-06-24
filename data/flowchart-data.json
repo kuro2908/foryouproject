@@ -1,0 +1,15 @@
+{
+  "nodes": [
+    { "id": "start", "label": "Start" },
+    { "id": "choice1", "label": "Go Left" },
+    { "id": "choice2", "label": "Go Right" },
+    { "id": "ending1", "label": "Bad Ending" },
+    { "id": "ending2", "label": "Good Ending" }
+  ],
+  "edges": [
+    { "source": "start", "target": "choice1" },
+    { "source": "start", "target": "choice2" },
+    { "source": "choice1", "target": "ending1" },
+    { "source": "choice2", "target": "ending2" }
+  ]
+}

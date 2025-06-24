@@ -2,11 +2,11 @@ let story;
 let storyDiv;
 
 async function loadStory() {
-  const response = await fetch("story.json");
+  const response = await fetch("./data/story.json");
   const storyContent = await response.json();
   story = new inkjs.Story(storyContent);
   storyDiv = document.getElementById("story");
-  showFullStory(); // Hiển thị toàn bộ câu chuyện khi load
+  showFullStory(); 
 }
 
 // ---------------------------

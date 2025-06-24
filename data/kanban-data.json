@@ -1,0 +1,33 @@
+{
+  "boards": [
+    {
+      "id": "_todo",
+      "title": "To Do",
+      "items": [
+        { "title": "Write scenario", "assignee": "Kuro", "date": "2025-06-24" }
+      ]
+    },
+    {
+      "id": "_ongoing",
+      "title": "On Going",
+      "items": [
+        { "title": "Design UI", "assignee": "Nhat", "date": "2025-06-25" }
+      ]
+    },
+    {
+      "id": "_reviewing",
+      "title": "Reviewing",
+      "items": []
+    },
+    {
+      "id": "_reject",
+      "title": "Reject",
+      "items": []
+    },
+    {
+      "id": "_done",
+      "title": "Done",
+      "items": []
+    }
+  ]
+}

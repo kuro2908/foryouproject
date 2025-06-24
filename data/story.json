@@ -1,0 +1,349 @@
+{
+    "inkVersion": 21,
+    "root": [
+        [
+            {
+                "->": "start"
+            },
+            {
+                "->": "restart_marker"
+            },
+            [
+                "done",
+                {
+                    "#f": 5,
+                    "#n": "g-0"
+                }
+            ],
+            null
+        ],
+        "done",
+        {
+            "restart_marker": [
+                "#",
+                "^RESTART",
+                "/#",
+                {
+                    "->": "start"
+                },
+                {
+                    "#f": 1
+                }
+            ],
+            "start": [
+                [
+                    "^Cuộc sống này có hơi nhàm chán hoặc hơi mệt mỏi với bạn không?",
+                    "\n",
+                    "ev",
+                    "str",
+                    "^Có",
+                    "/str",
+                    "/ev",
+                    {
+                        "*": ".^.c-0",
+                        "flg": 4
+                    },
+                    "ev",
+                    "str",
+                    "^Không",
+                    "/str",
+                    "/ev",
+                    {
+                        "*": ".^.c-1",
+                        "flg": 4
+                    },
+                    {
+                        "c-0": [
+                            "\n",
+                            "^Ừm, mình cũng vậy.",
+                            "\n",
+                            {
+                                "->": "Co"
+                            },
+                            {
+                                "#f": 5
+                            }
+                        ],
+                        "c-1": [
+                            "\n",
+                            "^Ồ vậy sao, dù sao thì cũng cảm ơn vì bạn đã ghé qua thăm mình, chúc cuộc sống của bạn luôn tốt đẹp, nhưng nếu mệt mỏi thì hãy đến thăm mình nhé.",
+                            "\n",
+                            {
+                                "->": "restart_marker"
+                            },
+                            {
+                                "#f": 5
+                            }
+                        ]
+                    }
+                ],
+                {
+                    "#f": 1
+                }
+            ],
+            "Co": [
+                [
+                    "^Có lẽ đôi khi, thứ chúng ta tìm kiếm chỉ là một dư vị nhẹ nhàng.",
+                    "\n",
+                    "^Nhưng mà nhé, có lẽ trong cuộc sống này, những điều bạn phải chịu đựng lại có những ý nghĩa quan trọng đó.",
+                    "\n",
+                    "^Những \"nỗi buồn\" đó của bạn, mình hiểu, tuy vậy mình lại không thể làm được gì cho bạn, mình không thể xóa nó đi, mình cũng không thể lúc nào cũng ở bên bạn và xoa dịu bạn được, suy cho cùng thì, có lẽ mình và bạn còn chưa từng biết nhau là ai.",
+                    "\n",
+                    "^Cuộc sống của bạn là của bạn, mình không thể đánh giá cũng như không thể thấu hiểu mọi thứ về bạn, tuy vậy, dù chỉ một ngày, dù chỉ một lần, liệu bạn có muốn cùng mình nhìn lại những nỗi buồn, những niềm vui cũng như câu chuyện mà mình muốn kể cho bạn không?",
+                    "\n",
+                    [
+                        "ev",
+                        {
+                            "^->": "Co.0.8.$r1"
+                        },
+                        {
+                            "temp=": "$r"
+                        },
+                        "str",
+                        {
+                            "->": ".^.s"
+                        },
+                        [
+                            {
+                                "#n": "$r1"
+                            }
+                        ],
+                        "/str",
+                        "/ev",
+                        {
+                            "*": "Co.0.c-0",
+                            "flg": 2
+                        },
+                        {
+                            "s": [
+                                "^Có chứ",
+                                {
+                                    "->": "$r",
+                                    "var": true
+                                },
+                                null
+                            ]
+                        }
+                    ],
+                    [
+                        "ev",
+                        {
+                            "^->": "Co.0.9.$r1"
+                        },
+                        {
+                            "temp=": "$r"
+                        },
+                        "str",
+                        {
+                            "->": ".^.s"
+                        },
+                        [
+                            {
+                                "#n": "$r1"
+                            }
+                        ],
+                        "/str",
+                        "/ev",
+                        {
+                            "*": "Co.0.c-1",
+                            "flg": 2
+                        },
+                        {
+                            "s": [
+                                "^Mình không muốn",
+                                {
+                                    "->": "$r",
+                                    "var": true
+                                },
+                                null
+                            ]
+                        }
+                    ],
+                    {
+                        "c-0": [
+                            "ev",
+                            {
+                                "^->": "Co.0.c-0.$r2"
+                            },
+                            "/ev",
+                            {
+                                "temp=": "$r"
+                            },
+                            {
+                                "->": "Co.0.8.s"
+                            },
+                            [
+                                {
+                                    "#n": "$r2"
+                                }
+                            ],
+                            "\n",
+                            {
+                                "->": "Chuong1"
+                            },
+                            {
+                                "#f": 5
+                            }
+                        ],
+                        "c-1": [
+                            "ev",
+                            {
+                                "^->": "Co.0.c-1.$r2"
+                            },
+                            "/ev",
+                            {
+                                "temp=": "$r"
+                            },
+                            {
+                                "->": "Co.0.9.s"
+                            },
+                            [
+                                {
+                                    "#n": "$r2"
+                                }
+                            ],
+                            "\n",
+                            "^Vậy à,",
+                            "\n",
+                            "ev",
+                            {
+                                "VAR?": "khong_muon_count"
+                            },
+                            1,
+                            "+",
+                            "/ev",
+                            {
+                                "VAR=": "khong_muon_count",
+                                "re": true
+                            },
+                            "ev",
+                            {
+                                "VAR?": "khong_muon_count"
+                            },
+                            1,
+                            "==",
+                            "/ev",
+                            [
+                                {
+                                    "->": ".^.b",
+                                    "c": true
+                                },
+                                {
+                                    "b": [
+                                        "\n",
+                                        "^Mình hiểu. Đôi khi chúng ta cần thời gian.",
+                                        "\n",
+                                        "^Nếu bạn thấy sẵn sàng, mình vẫn sẽ ở đây.",
+                                        "\n",
+                                        {
+                                            "->": "restart_marker"
+                                        },
+                                        {
+                                            "->": ".^.^.^.22"
+                                        },
+                                        null
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "->": ".^.b"
+                                },
+                                {
+                                    "b": [
+                                        "\n",
+                                        "ev",
+                                        {
+                                            "VAR?": "khong_muon_count"
+                                        },
+                                        10,
+                                        ">=",
+                                        "/ev",
+                                        [
+                                            {
+                                                "->": ".^.b",
+                                                "c": true
+                                            },
+                                            {
+                                                "b": [
+                                                    "\n",
+                                                    "^Bạn đã từ chối 10 lần. Có lẽ đó cũng là một câu trả lời rồi nhỉ. Dù sao thì, cảm ơn bạn đã ở lại cho tới lúc này.",
+                                                    "\n",
+                                                    "end",
+                                                    {
+                                                        "->": ".^.^.^.8"
+                                                    },
+                                                    null
+                                                ]
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "->": ".^.b"
+                                            },
+                                            {
+                                                "b": [
+                                                    "\n",
+                                                    "^bạn đã từ chối mình ",
+                                                    "ev",
+                                                    {
+                                                        "VAR?": "khong_muon_count"
+                                                    },
+                                                    "out",
+                                                    "/ev",
+                                                    "^ lần rồi nhỉ, dù mình biết rằng là điều gì cũng cần thời gian, tuy vậy, bị từ chối nhiều lần quá cũng không hay lắm, có lẽ mình cũng nên nghĩ đến cảm xúc của bạn hơn là chỉ cố gắng kéo lấy tay bạn đi ...",
+                                                    "\n",
+                                                    {
+                                                        "->": "restart_marker"
+                                                    },
+                                                    {
+                                                        "->": ".^.^.^.8"
+                                                    },
+                                                    null
+                                                ]
+                                            }
+                                        ],
+                                        "nop",
+                                        "\n",
+                                        {
+                                            "->": ".^.^.^.22"
+                                        },
+                                        null
+                                    ]
+                                }
+                            ],
+                            "nop",
+                            "\n",
+                            {
+                                "#f": 5
+                            }
+                        ]
+                    }
+                ],
+                {
+                    "#f": 1
+                }
+            ],
+            "Chuong1": [
+                "^Mắt bạn dần hé mở ...",
+                "\n",
+                "done",
+                {
+                    "#f": 1
+                }
+            ],
+            "global decl": [
+                "ev",
+                0,
+                {
+                    "VAR=": "khong_muon_count"
+                },
+                "/ev",
+                "end",
+                null
+            ],
+            "#f": 1
+        }
+    ],
+    "listDefs": {}
+}
